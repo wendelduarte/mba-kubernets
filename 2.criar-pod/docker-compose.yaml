@@ -1,0 +1,18 @@
+version: "3"
+
+# declaração dos serviços
+services:
+  # nome do serviço
+  servidor-python:
+    # nome do container
+    container_name: servidor-python
+    # imagem a ser utilizada na criação do container
+    image: helderprado/servidor-python:1.0
+    # image: `USUARIO_DOCKER_HUB`/servidor-python
+    # mapeamento de portas 8000 -> 8000 (máquina -> container)
+    ports:
+      - "8000:8000"
+    # definição das variáveis de ambiente via arquivo .env
+    environment:
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
